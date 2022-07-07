@@ -1,4 +1,5 @@
 const Ping = require("ping");
+const fs = require("fs");
 const API = require("./api");
 const serverConfig = require("../config/ping.json");
 
@@ -18,8 +19,16 @@ function doTask(type, id) {
     }
 }
 
-function checkMachine(server, wasAlive = false) {
+function checkMachine(server, id, wasAlive = false) {
+    if (id != timestamp) {
+        console.log("Shutting down pinger...");
+        return;
+    }
     Ping.sys.probe(server.ip, function(isAlive) {
+        if (id != timestamp) {
+            console.log("Shutting down old pinger...");
+            return;
+        }
         if (isAlive != wasAlive) {
             if (isAlive) {
                 console.log(server.name + " is online!");
@@ -30,11 +39,30 @@ function checkMachine(server, wasAlive = false) {
             }
         }
         setTimeout(function() {
-            checkMachine(server, isAlive);
+            checkMachine(server, id, isAlive);
         }, 1000);
     });
 }
 
-for (server in serverConfig) {
-    checkMachine(serverConfig[server]);
+var timestamp;
+
+function reloadConfig() {
+    timestamp = (new Date()).getTime();
+    for (server in serverConfig) {
+        checkMachine(serverConfig[server], timestamp);
+    }
 }
+
+reloadConfig();
+
+var configReloader;
+
+fs.watch(__dirname + "/../config", function (event, filename) {
+    if (filename === "ping.json") {
+        clearTimeout(configReloader);
+        configReloader = setTimeout(function() {
+            console.log("Config file has been updated! Reloading...");
+            reloadConfig();
+        }, 1000);
+    }
+});
