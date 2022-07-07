@@ -1,0 +1,167 @@
+{
+    "strips": {
+        "strip1": {
+            "name": "Performance Desk",
+            "ip": "neopixels",
+            "segments": {
+                "perf1": {
+                    "name": "Performance Desk Back",
+                    "id": 0,
+                    "start": 0,
+                    "end": 150,
+                    "offset": 48
+                },
+                "perf2": {
+                    "name": "Performance Desk Front",
+                    "id": 1,
+                    "start": 95,
+                    "end": 150,
+                    "offset": 0
+                }
+            }
+        }
+    },
+    "profiles": {
+        "off": {
+            "perf1": {
+                "on": true,
+                "effect": "solid",
+                "brightness": 255,
+                "palette": "custom",
+                "colors": [
+                    [0,0,0],
+                    [0,0,0],
+                    [0,0,0]
+                ]
+            },
+            "perf2": {
+                "on": true,
+                "effect": "solid",
+                "brightness": 255,
+                "palette": "custom",
+                "colors": [
+                    [0,0,0],
+                    [0,0,0],
+                    [0,0,0]
+                ]
+            }
+        },
+        "oscillate": {
+            "perf1": {  
+                "on": true,
+                "effect": "oscillate",
+                "speed": 255,
+                "brightness": 255,
+                "palette": "custom",
+                "colors": [
+                    [255, 255, 255],
+                    [255, 0, 0],
+                    [255, 0, 0]
+                ]
+            },
+            "perf2": {
+                "on": false
+            }
+        },
+        "oscillate green": {
+            "perf1": {  
+                "on": true,
+                "effect": "oscillate",
+                "speed": 255,
+                "brightness": 255,
+                "palette": "custom",
+                "colors": [
+                    [0, 255, 0],
+                    [0, 255, 0],
+                    [0, 255, 0]
+                ]
+            },
+            "perf2": {
+                "on": false
+            }
+        },
+        "red": {
+            "perf1": {
+                "on": true,
+                "effect": "solid",
+                "brightness": 255,
+                "palette": "custom",
+                "colors": [
+                    [255,0,0],
+                    [255,0,0],
+                    [255,0,0]
+                ]
+            },
+            "perf2": {
+                "on": true,
+                "effect": "solid",
+                "brightness": 255,
+                "palette": "custom",
+                "colors": [
+                    [255,255,0],
+                    [255,255,0],
+                    [255,255,0]
+                ]
+            }
+        },
+        "fireworks": {
+            "perf1": {
+                "on": true,
+                "effect": "fireworks 1d",
+                "palette": "rainbow"
+            },
+            "perf2": {
+                "on": false
+            }
+        },
+        "gay": {
+            "perf1": {
+                "on": false
+            },
+            "perf2": {
+                "on": true,
+                "effect": "pride 2015",
+                "mirror": true,
+                "speed": 100
+            }
+        },
+        "mega gay zone": {
+            "perf1": {
+                "on": true,
+                "effect": "pride 2015",
+                "mirror": true,
+                "reverse": true,
+                "speed": 100
+            },
+            "perf2": {
+                "on": false
+            }
+        }
+    },
+    "playlists": {
+        "red growl": [
+            {
+                "profile": "off",
+                "transition": 0,
+                "duration": 0
+            },
+            {
+                "profile": "red",
+                "transition": 30,
+                "duration": 100
+            }
+        ],
+        "oscillation": [
+            {
+                "profile": "oscillate",
+                "transition": 0,
+                "duration": 100
+            },
+            {
+                "profile": "oscillate green",
+                "transition": 50,
+                "duration": 0
+            }
+        ]
+    }
+}

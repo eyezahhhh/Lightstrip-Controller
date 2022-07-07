@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Princess Diana",
+        "ip": "192.168.178.58",
+        "onConnect": {
+            "type": "profile",
+            "id": "mega gay zone"
+        },
+        "onDisconnect": {
+            "type": "profile",
+            "id": "off"
+        }
+    }
+]
