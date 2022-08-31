@@ -3,12 +3,12 @@
         "name": "Princess Diana",
         "ip": "192.168.178.58",
         "onConnect": {
-            "type": "profile",
-            "id": "mega gay zone"
+            "type": "playlist",
+            "id": "startup"
         },
         "onDisconnect": {
-            "type": "profile",
-            "id": "off"
+            "type": "playlist",
+            "id": "shutdown"
         }
     }
 ]

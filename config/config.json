@@ -1,21 +1,34 @@
 {
     "strips": {
-        "strip1": {
+        "perf": {
             "name": "Performance Desk",
-            "ip": "neopixels",
+            "ip": "192.168.178.103",
             "segments": {
                 "perf1": {
                     "name": "Performance Desk Back",
                     "id": 0,
                     "start": 0,
                     "end": 150,
-                    "offset": 48
+                    "offset": 0
                 },
                 "perf2": {
                     "name": "Performance Desk Front",
                     "id": 1,
-                    "start": 95,
-                    "end": 150,
+                    "start": 45,
+                    "end": 105,
+                    "offset": 0
+                }
+            }
+        },
+        "desk1": {
+            "name": "Back Desk",
+            "ip": "neopixels-back",
+            "segments": {
+                "desk1": {
+                    "name": "Main Desk Back",
+                    "id": 0,
+                    "start": 0,
+                    "end": 200,
                     "offset": 0
                 }
             }
@@ -44,6 +57,17 @@
                     [0,0,0],
                     [0,0,0]
                 ]
+            },
+            "desk1": {
+                "on": true,
+                "effect": "solid",
+                "brightness": 255,
+                "palette": "custom",
+                "colors": [
+                    [0,0,0],
+                    [0,0,0],
+                    [0,0,0]
+                ]
             }
         },
         "oscillate": {
@@ -61,6 +85,18 @@
             },
             "perf2": {
                 "on": false
+            },
+            "desk1": {  
+                "on": true,
+                "effect": "oscillate",
+                "speed": 255,
+                "brightness": 255,
+                "palette": "custom",
+                "colors": [
+                    [255, 255, 255],
+                    [255, 0, 0],
+                    [255, 0, 0]
+                ]
             }
         },
         "oscillate green": {
@@ -78,6 +114,18 @@
             },
             "perf2": {
                 "on": false
+            },
+            "desk1": {  
+                "on": true,
+                "effect": "oscillate",
+                "speed": 255,
+                "brightness": 255,
+                "palette": "custom",
+                "colors": [
+                    [0, 255, 0],
+                    [0, 255, 0],
+                    [0, 255, 0]
+                ]
             }
         },
         "red": {
@@ -102,6 +150,17 @@
                     [255,255,0],
                     [255,255,0]
                 ]
+            },
+            "desk1": {
+                "on": true,
+                "effect": "solid",
+                "brightness": 255,
+                "palette": "custom",
+                "colors": [
+                    [255,0,0],
+                    [255,0,0],
+                    [255,0,0]
+                ]
             }
         },
         "fireworks": {
@@ -112,6 +171,127 @@
             },
             "perf2": {
                 "on": false
+            },
+            "desk1": {
+                "on": true,
+                "effect": "fireworks 1d",
+                "palette": "rainbow"
+            }
+        },
+        "pink": {
+            "perf1": {
+                "on": true,
+                "effect": "solid",
+                "palette": "custom",
+                "colors": [
+                    [255,0,123],
+                    [255,0,123],
+                    [255,0,123]
+                ]
+            },
+            "perf2": {
+                "on": false
+            },
+            "desk1": {
+                "on": true,
+                "effect": "solid",
+                "palette": "custom",
+                "colors": [
+                    [255,0,123],
+                    [255,0,123],
+                    [255,0,123]
+                ]
+            }
+        },
+        "gold ripple": {
+            "perf1": {
+                "on": true,
+                "effect": "ripple",
+                "palette": "custom",
+                "speed": 100,
+                "colors": [
+                    [255,255,255],
+                    [255,160,0],
+                    [255,255,255]
+                ]
+            },
+            "perf2": {
+                "on": false
+            },
+            "desk1": {
+                "on": true,
+                "effect": "ripple",
+                "palette": "custom",
+                "speed": 100,
+                "colors": [
+                    [255,255,255],
+                    [255,160,0],
+                    [255,255,255]
+                ]
+            }
+        },
+        "gold": {
+            "perf1": {
+                "on": true,
+                "effect": "solid",
+                "palette": "custom",
+                "speed": 100,
+                "colors": [
+                    [255,160,0],
+                    [255,160,0],
+                    [255,160,0]
+                ]
+            },
+            "perf2": {
+                "on": true,
+                "effect": "solid",
+                "palette": "custom",
+                "speed": 100,
+                "colors": [
+                    [255,160,0],
+                    [255,160,0],
+                    [255,160,0]
+                ]
+            },
+            "desk1": {
+                "on": true,
+                "effect": "solid",
+                "palette": "custom",
+                "speed": 100,
+                "colors": [
+                    [255,160,0],
+                    [255,160,0],
+                    [255,160,0]
+                ]
+            }
+        },
+        "spin": {
+            "perf1": {
+                "on": true,
+                "effect": "chase",
+                "palette": "custom",
+                "speed": 255,
+                "brightness": 255,
+                "colors": [
+                    [255,160,0],
+                    [0,0,0],
+                    [0,0,0]
+                ]
+            },
+            "perf2": {
+                "on": false
+            },
+            "desk1": {
+                "on": true,
+                "effect": "chase",
+                "palette": "custom",
+                "speed": 255,
+                "brightness": 255,
+                "colors": [
+                    [255,160,0],
+                    [0,0,0],
+                    [0,0,0]
+                ]
             }
         },
         "gay": {
@@ -119,6 +299,12 @@
                 "on": false
             },
             "perf2": {
+                "on": true,
+                "effect": "pride 2015",
+                "mirror": true,
+                "speed": 100
+            },
+            "desk1": {
                 "on": true,
                 "effect": "pride 2015",
                 "mirror": true,
@@ -135,6 +321,13 @@
             },
             "perf2": {
                 "on": false
+            },
+            "desl1": {
+                "on": true,
+                "effect": "pride 2015",
+                "mirror": true,
+                "reverse": true,
+                "speed": 100
             }
         }
     },
@@ -149,6 +342,35 @@
                 "profile": "red",
                 "transition": 30,
                 "duration": 100
+            }
+        ],
+        "shutdown": [
+            {
+                "profile": "gold ripple",
+                "transition": 0,
+                "duration": 500
+            },
+            {
+                "profile": "gold",
+                "transition": 0,
+                "duration": 200
+            },
+            {
+                "profile": "off",
+                "transition": 30,
+                "duration": 0
+            }
+        ],
+        "startup": [
+            {
+                "profile": "spin",
+                "transition": 0,
+                "duration": 500
+            },
+            {
+                "profile": "pink",
+                "transition": 0,
+                "duration": 0
             }
         ],
         "oscillation": [
