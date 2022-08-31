@@ -19,6 +19,8 @@ function doTask(type, id) {
     }
 }
 
+var machineStates = {};
+
 function checkMachine(server, id, wasAlive = false) {
     if (id != timestamp) {
         console.log("Shutting down pinger...");
@@ -29,6 +31,12 @@ function checkMachine(server, id, wasAlive = false) {
             console.log("Shutting down old pinger...");
             return;
         }
+        if (isAlive) {
+            machineStates[server.name] = 0;
+        } else {
+            machineStates[server.name]++;
+        }
+        isAlive = machineStates[server.name] >= 3;
         if (isAlive != wasAlive) {
             if (isAlive) {
                 console.log(server.name + " is online!");
@@ -48,7 +56,9 @@ var timestamp;
 
 function reloadConfig() {
     timestamp = (new Date()).getTime();
+    machineStates = {};
     for (server in serverConfig) {
+        machineStates[serverConfig[server].ip] = 0;
         checkMachine(serverConfig[server], timestamp);
     }
 }
